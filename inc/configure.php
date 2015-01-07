@@ -8,6 +8,6 @@ $db_NAME        = 'database';
 $siteHost       = 'yourdomain.net';
 $siteURL        = sprintf("http://%s/",$_SERVER['HTTP_HOST']);
 
-$emailAddress   = "youremail@gmail.com";
+$emailAddress   = 'your_email@gmail.com';
 
 ?>
