@@ -9,7 +9,7 @@ $cdata = $_GET['c'];
 $referer = $_GET['d'];
 
 // Check for valid cookie data
-if(isset($cdata) && $cdata != "" && isset($referer) && $referer!="") {
+if(isset($cdata) && $cdata != '' && isset($referer) && $referer != '') {
 	////////////////////////////////////
 	## Initiate Objects/Classes
 	$catcher = new cookieCatcher();
