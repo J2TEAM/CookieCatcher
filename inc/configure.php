@@ -10,4 +10,4 @@ $siteURL        = sprintf("http://%s/",$_SERVER['HTTP_HOST']);
 
 $emailAddress   = 'your_email@gmail.com';
 
-?>
+/* EOF */

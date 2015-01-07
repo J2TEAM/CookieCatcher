@@ -113,4 +113,4 @@ class cookieCatcher extends mysqlQueryLab {
   }
 }
    
-?>
+/* EOF */

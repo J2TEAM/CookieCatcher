@@ -117,5 +117,5 @@ class mysqlQueryLab {
     die($error);
   }
 }
- 
-?>
+
+/* EOF */
