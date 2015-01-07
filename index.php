@@ -1,7 +1,7 @@
 <?php
-include('inc/configure.php');
-include('inc/mysql_querylab.php');
-include('inc/cookieCatcher.php');
+require_once('inc/configure.php');
+require_once('inc/mysql_querylab.php');
+require_once('inc/cookieCatcher.php');
 
 ////////////////////////////////////
 ## Initiate Objects/Classes
@@ -78,8 +78,7 @@ foreach($pl->results as $payload) {
   $payloads[$payload['id']]['payload'] = urlencode(str_replace('{siteURL}',$siteURL,$payload['payload'])); 
 }
 
-?>
-
+?><!DOCTYPE html>
 <html>
 <head>
 <title>CookieCatcher BETA v0.1</title>
