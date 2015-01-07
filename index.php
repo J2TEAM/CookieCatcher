@@ -81,26 +81,25 @@ foreach($pl->results as $payload) {
 ?><!DOCTYPE html>
 <html>
 <head>
-<title>CookieCatcher BETA v0.1</title>
-<script>
-function c() {
-  p = document.getElementById('payloadcode');
-  l = document.getElementById('counter');
-  l.value = p.value.length;
-}
-function u(pid) {
-  document.getElementById('payloadcode').value = unescape(payload[pid].replace("+"," "));
-  c();
-}
-var payload = new Array();
-payload[0] = "";
-<?php foreach($payloads as $k=>$p) { ?>
-payload[<?php echo $k;?>] = "<?php echo $p['payload'];?>";
-<?php } ?>
-</script>
-<link href="style.css" rel="stylesheet">
+  <title>CookieCatcher BETA v0.1</title>
+  <script>
+  function c() {
+    p = document.getElementById('payloadcode');
+    l = document.getElementById('counter');
+    l.value = p.value.length;
+  }
+  function u(pid) {
+    document.getElementById('payloadcode').value = unescape(payload[pid].replace("+"," "));
+    c();
+  }
+  var payload = new Array();
+  payload[0] = "";
+  <?php foreach($payloads as $k=>$p) { ?>
+  payload[<?php echo $k;?>] = "<?php echo $p['payload'];?>";
+  <?php } ?>
+  </script>
+  <link href="style.css" rel="stylesheet">
 </head>
-
 <body onload="c()">
 <pre id="ascii">
       ...                                        ..         .                        ...                           s                                                  
@@ -120,24 +119,23 @@ X8888  X888h        888R Y888r  888R Y888r   888E u@8NL   .@88u    ud8888.     X
                                                                                                                                       :"                              
 </pre>
 
-<?php if($message=='') { ?>
-<div id="tag">XSS Payload</div>
-<div id="payload">
-  <div class="payloadselect">
-    <select onchange="u(this.value);">
-      <option value="0">-- select an attack--</option>
-      <?php foreach($payloads as $k=>$p) { ?>
-      <option value="<?php echo $k;?>"><?php echo $p['name'];?></option>
-      <?php } ?>
-    </select>
+  <?php if($message=='') { ?>
+  <div id="tag">XSS Payload</div>
+  <div id="payload">
+    <div class="payloadselect">
+      <select onchange="u(this.value);">
+        <option value="0">-- select an attack--</option>
+        <?php foreach($payloads as $k=>$p) { ?>
+        <option value="<?php echo $k;?>"><?php echo $p['name'];?></option>
+        <?php } ?>
+      </select>
+    </div>
+    <div class="payloadcode"><input type="text" id="payloadcode" onkeyup="c()" value="" size=60/><input type="text" id="counter" value=""/></div><br clear="both"/>
   </div>
-  <div class="payloadcode"><input type="text" id="payloadcode" onkeyup="c()" value="" size=60/><input type="text" id="counter" value=""/></div><br clear="both"/>
-</div>
-<?php } ?>
+  <?php } ?>
 
-<p><?php echo $message; ?></p>
+  <p><?php echo $message; ?></p>
 
-<div class="table"><?php echo $message=='' ? $cookieResults : '<a class="button" href="?">back</a><a class="button" href="?">delete</a>'; ?></p></div>
-
+  <div class="table"><?php echo $message=='' ? $cookieResults : '<a class="button" href="?">back</a><a class="button" href="?">delete</a>'; ?></p></div>
 </body>
 </html>
